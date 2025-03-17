@@ -54,3 +54,20 @@ document.querySelector(".search-icons").addEventListener(
     } 
   }
 )
+
+document.querySelector(".menu-icons").addEventListener(
+    "click", () => {
+        
+        if (getComputedStyle( document.querySelector(".menu-icons .menu")).display === "flex") {
+            document.querySelector(".nav-dropdown").style.display = "flex";
+            document.querySelector(".menu-icons .menu").style.display = "none"
+            document.querySelector(".menu-icons .menu-cancle").style.display ="flex";
+            document.querySelector(".content").style.display = "none"
+        } else if (getComputedStyle( document.querySelector(".menu-icons .menu")).display === "none") {
+            document.querySelector(".nav-dropdown").style.display = "none";
+            document.querySelector(".menu-icons .menu").style.display = "flex"
+            document.querySelector(".menu-icons .menu-cancle").style.display ="none"
+            document.querySelector(".content").style.display = "flex"
+        }
+    }
+)
