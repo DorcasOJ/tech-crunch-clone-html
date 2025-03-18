@@ -438,10 +438,7 @@ nav {
     transform: scale(1.02);
 }
 
-.hero .news-segment {
-
-}
-.img-text {
+.hero .img-text {
     height: 100%;
     display: flex;
     flex-direction: column;
@@ -452,12 +449,12 @@ nav {
     padding-bottom: 1rem;
 }
 .big-hero .img-description {
-    font-size: 2.1rem;
+    font-size: 2.8rem;
     font-weight: bold;
 }
 
 .sub-hero-imgs .img-description{
-    font-size: .9em;
+    font-size: 1em;
     font-weight: bold;
 }
 
@@ -468,6 +465,12 @@ nav {
 .img-footer {
     padding-top: .6rem;
     font-size: 9px;
+    color: #666565;
+    cursor: pointer;
+}
+
+.img-footer:hover {
+   text-decoration: underline;
 }
 
 .bg-blur {
@@ -486,9 +489,9 @@ nav {
     height: 10rem;
 }
 
-.news-segment {
-    font-size: 11px;
-    padding: 5px 0;
+.hero .news-segment {
+    font-size: 9px;
+    padding: 8px 0;
     text-transform: uppercase;
     border-top: .1px solid #ffffff27;
 }
@@ -528,8 +531,8 @@ nav {
 
 .news-content {
     display: flex;
-    align-items: center;
-    justify-content: center;
+    align-items: start;
+    justify-content: start;
 }
 
 .news .news-left {
@@ -542,31 +545,37 @@ nav {
 
 }
 
-.news .section-title {
-    padding-bottom: 2rem;
+.news .section-title, .story .section-title,
+.upcoming .section-title, .newsletters .section-title{
     display: flex;
     align-items: center;
     justify-content: start;
     flex-wrap: wrap;
-    padding-bottom: 1.5rem;
+    padding-bottom: 2rem;
 
 }
 
-.news .title {
+.news .title, .upcoming .title {
     font-size: 3rem;
     font-weight: bolder;
     color: var(--hero-color);
     padding-right: 1.2rem;
+    padding-bottom: 1rem;
+
 }
-.news .see-more {
+ .see-more {
     font-size: 14px;
     padding: 10px;
     outline: 1px solid #2a8b2a;
     border-radius: 20px;
 }
 
-.news .see-more:hover, .news .next-div:hover {
+.see-more:hover {
     background-color: var(--bg-green);
+    color: #fff;
+}
+
+.see-more:hover i {
     color: #fff;
 }
 
@@ -585,13 +594,90 @@ nav {
 .news .next-div i {
     padding-left: 1rem;
 }
-.news .see-more span:nth-child(1) {
+ .see-more span:nth-child(1) {
     padding: 3px;
 }
 
-.news .see-more i {
+.see-more i {
     color: var(--hero-color);
 }
+
+.news-left ul {
+    list-style: none;
+    margin-bottom: 3rem;
+    margin-right: 2rem;
+}
+
+.news-left ul li {
+    padding: 15px 0;
+    border-bottom: .5px solid #ccc;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+}
+
+
+.news-left ul li .news-segment {
+    font-size: 9px;
+    padding: 8px 0;
+    text-transform: uppercase;
+    cursor: pointer;
+    color: var(--hero-color);
+}
+.news-left ul li .img-left {
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+
+.news-left ul li .news-img-div {
+    height: 100%;
+    width: 25%;
+    cursor: pointer;
+    overflow: hidden;
+
+}
+
+.news-left ul li .img-left .news-img {
+    height: 3rem;
+    background-image: url('./images/Joby_VirginAtlantic.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform .6s ease-in 0s;
+    transform-origin: center;
+}
+
+.news-left ul li:nth-child(even) .news-img {
+    background-image: url('./images/meta-img-1.jpg');
+
+}
+
+.news-left ul li:nth-child(3n) .news-img {
+    background-image: url('./images/hero-img-1.jpg');
+
+}
+
+.news-left ul li .img-left .news-img-div:hover .news-img {
+    transform: scale(1.1);
+} 
+
+.news-left ul li .text-right {
+    width: 75%;
+    padding-left: 10px;
+}
+.news-left ul li .text-right .img-description {
+    font-weight: bold;
+    font-size: .8rem;
+    cursor: pointer;
+    /* padding: 10px 0; */
+}
+
+.news-left ul li .text-right .img-footer {}
+
+
 
 .news-right .most-popular {
     display: flex;
@@ -601,26 +687,35 @@ nav {
     background-color: #3c3cde;
     padding: 15px;
     color: #fff;
+    box-shadow: -2px 36px 5px 1px rgba(207,207,91,0.75);
+    -webkit-box-shadow: -2px 36px 5px 1px rgba(207,207,91,0.75);
+    -moz-box-shadow: -2px 36px 5px 1px rgba(207,207,91,0.75);
 }
 
-.news-right .most-popular-text {
-    font-size: 1.5rem;
-    line-height: 2rem;
+.news-right .most-popular-text-span {
+    font-size: 1.8rem;
+    font-weight: bolder;
+    line-height: 2.2rem;
+    width: 100%;
     display: flex;
     justify-content: space-between;
+    margin-bottom: 20px;
 }
 
-.news-right .most-popular-text span:nth-child(2) {
-    height: 3rem;
-    background-color: #dede7c;
+.news-right .most-popular-text-span .most-popular-icon {
+    height: 100%;
+    padding: 11px 18px;
+    background-color: #cfcf5b;
 }
 
-.news-right .most-popular-text span:nth-child(2) i {
+.news-right .most-popular-text-span .most-popular-icon i {
     color: #3c3cde;
+    font-size: 18px;
 }
 
 .news-right .most-popular ul {
    list-style: square;
+   padding-left: 1rem;
    display: flex;
    flex-direction: column;
    align-items: center;
@@ -629,7 +724,183 @@ nav {
 
 .news-right .most-popular li {
     border-bottom: 1px solid #ffffff43;
+    font-size: 12px;
+    padding: 10px;
 }
+
+.news-right .most-popular li:hover a {
+    text-decoration: underline;
+}
+
+.story {
+    background-color: #252424;
+    color: #fff;
+    padding: var(--padding-within-element);
+}
+
+.story .title, .newsletters .title {
+    font-size: 2rem;
+    color: #fff;
+    padding-right: 1.20rem;
+    padding: 2rem 1rem 2rem 0;
+
+}
+
+.story-text {
+    color: #ccc;
+    font-size: 14px;
+}
+.story-imgs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    height: 12rem;
+    margin: 10px 0;
+}
+
+.story-img-div {
+    position: relative;
+    height: 100%;
+    width: 33%;
+    cursor: pointer;
+
+}
+
+.story-img {
+    height: 100%;
+    background: url('./images/hero-img-1.webp');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: transform .6s ease-in 0s;
+    transform-origin: center;
+}
+
+.story-imgs .story-img-text {
+  z-index: 1000;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    position: absolute;
+    bottom: 20%;
+    padding: 0 0 15px 20px;
+}
+
+.story-imgs .bg-blur {
+    backdrop-filter: blur(10px);
+    position: absolute;
+    bottom: 0px;
+    width: 100%;
+    height: 10rem;
+    backdrop-filter: blur(10px);
+    -webkit-mask: linear-gradient(to bottom, transparent, black 50%);
+    -webkit-backdrop-filter: blur(10px);
+    background-color: #000;
+}
+
+.story-imgs .img-description {
+    font-size: 14px;
+    width: 85%;
+}
+
+.upcoming-content {
+    margin-top: 2rem;
+    padding: var(--padding-within-element);
+}
+
+.upcoming ul {
+    list-style: none;
+    display: flex;
+    flex-direction: column;
+}
+
+.upcoming ul li {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+.upcoming ul li div:nth-child(1) {
+    font-weight: bold;
+}
+
+.upcoming ul li .events {
+    display: flex;
+    width: 100%;
+    
+}
+
+.upcoming .events .details {
+    width: 50%;
+    font-size: 14px;
+}
+
+.upcoming .events .register,
+.upcoming .events .sponsor {
+    width: 20%;
+    margin-right: 5px;
+    font-size: 12px;
+}
+
+.newsletters-content {
+    padding: var(--padding-within-element);
+}
+
+.newsletters .title {
+    color: #000;
+}
+
+.newsletters .newsletters-text {
+    font-size: 12px;
+
+}
+
+.newsletters form {
+    margin: 1rem 0;
+}
+
+.newsletters form input {
+    padding: 10px 15px;
+    min-width: 20rem;
+    font-size: 14px;
+    outline: none;
+    border: 1px solid #000;
+    border-radius: 5px;
+}
+
+.newsletters form .submit {
+    display: flex;
+    margin-top: 10px;
+    gap: 1rem;
+}
+
+.newsletters form .submit button {
+    padding: 10px 15px;
+    border:none;
+    outline: none;
+    background-color: #ccc;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+.newsletters form .submit button:hover {
+    color: #fff;
+    background-color: var(--bg-green);
+}
+
+.newsletters form .submit div {
+    font-size: 11px;
+}
+
+.newsletters form .submit div a{
+    text-decoration: underline;
+    color: var(--hero-color);
+}
+
 
 @media screen and (min-width: 1001px) and (max-width: 85rem) {
     .container {
